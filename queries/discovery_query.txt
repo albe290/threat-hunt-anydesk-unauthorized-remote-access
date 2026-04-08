@@ -1,0 +1,3 @@
+index=<endpoint_index> earliest=-7d "AnyDesk.exe"
+| stats count by index sourcetype
+| sort - count
