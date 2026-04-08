@@ -1,0 +1,12 @@
+# Detect AnyDesk execution from user-writable paths
+
+index=<endpoint_index> sourcetype=<process_sourcetype> earliest=-30d "AnyDesk.exe"
+| eval suspicious_path=if(
+    like(process_path,"%\\Downloads\\%") OR
+    like(process_path,"%\\Desktop\\%") OR
+    like(process_path,"%\\AppData\\%") OR
+    like(process_path,"%\\Temp\\%"),
+    "true","false"
+  )
+| search suspicious_path="true"
+| table _time user host process_path process_command_line parent_process
