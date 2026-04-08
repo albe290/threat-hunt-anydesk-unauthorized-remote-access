@@ -103,6 +103,14 @@ This hunt followed a structured threat hunting lifecycle:
 * Strengthened detection capabilities through repeatable logic
 
 ---
+## 📄 Threat Hunt Report
+
+A sanitized version of the full threat hunt report is available here:
+
+➡️ [View Report](docs/threat_hunt_report_sanitized.md)
+
+
+---
 
 ## 🛠️ Tools & Technologies
 
